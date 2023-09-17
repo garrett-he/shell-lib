@@ -1,5 +1,5 @@
 utils::shell_name() {
-    basename $(readlink /proc/$$/exe)
+    basename $SHELL
 }
 
 utils::fn_defined() {
