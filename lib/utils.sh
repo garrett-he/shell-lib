@@ -60,11 +60,7 @@ utils::read() {
 }
 
 utils::confirm() {
-    if [[ $(utils::shell_name) == 'bash' ]]; then
-        read -r -p "$(echo -e "\033[1;104m$1?\033[0m [y/N]: ")"
-    else
-        read -r "?$(echo -e "\033[1;104m$1?\033[0m [y/N]: ")"
-    fi
+    read -r -p "$(echo -e "\033[1;104m$1?\033[0m [y/N]: ")"
 
     if [[ "$REPLY" == 'y' ]] || [[ "$REPLY" == 'Y' ]]; then
         return 0
