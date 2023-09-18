@@ -44,11 +44,7 @@ utils::read() {
 
     prompt="$prompt\033[0m: "
 
-    if [[ $(utils::shell_name) == 'bash' ]]; then
-        read -r -p "$(echo -e "$prompt")"
-    else
-        read -r "?$(echo -e "$prompt")"
-    fi
+    read -r -p "$(echo -e "$prompt")"
 
     if [[ -z "${REPLY-}" ]]; then
         if [[ -n ${3:+x} ]]; then
